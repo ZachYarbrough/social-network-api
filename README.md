@@ -18,6 +18,12 @@ npm i
 
 This project should be used as a library of api routes to store information necessary in a database for the start of a social media network.
 
+## Walkthrough Video
+
+
+https://user-images.githubusercontent.com/70774264/139597397-761148dc-604c-4e77-8609-d40388833c0c.mp4
+
+
 ## Credits
 
 UT Austin full stack web development bootcamp
