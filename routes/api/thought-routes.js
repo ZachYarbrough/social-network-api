@@ -50,7 +50,7 @@ router.put('/:id', (req, res) => {
         .catch(err => res.json(err));
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {   
     Thought.findOneAndDelete({ _id: req.params.id })
         .then(thoughtData => {
             if(!thoughtData) {
@@ -81,8 +81,8 @@ router.post('/:thoughtId/reactions', (req, res) => {
         .catch(err => res.json(err));
 });
 
-router.post('/:thoughtId/reactions', (req, res) => {
-    Thought.findOneAndDelete({ _id: req.params.thoughtId}, { $pull: {reactions: req.body } })
+router.delete('/:thoughtId/reactions/:reactionId', (req, res) => {
+    Thought.findOneAndUpdate({ _id: req.params.thoughtId}, { $pull: { reactions: { _id: req.params.reactionId } } })
         .then(thoughtData => {
             if(!thoughtData) {
                 res.status(404).json({ message: 'No thought with that id.' });
